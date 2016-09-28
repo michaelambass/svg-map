@@ -7,6 +7,11 @@
   <body>
 
     <style type="text/css">
+
+    .map-wrapper{
+      max-width: 800px;
+    }
+
     #map{
         height: 100%;
         width: 100%;
@@ -14,16 +19,16 @@
     }
     </style>
 
-
-    <div id="map" class="world-map"></div>
-
+    <div class="map-wrapper">
+      <div id="map" class="world-map"></div>
+    </div>
     <div id="region-name"></div>
 
     <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
     <script type="text/javascript">
       var w = 1000;
       var h = 1000;
-      var map = Raphael('map');
+      var map = Raphael('map', '100%', '100%');
       map.setViewBox(0, 0, w, h, true);
 
 
