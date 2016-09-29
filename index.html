@@ -7,24 +7,29 @@
   <body>
 
     <style type="text/css">
-
-    .map-wrapper{
-      max-width: 800px;
-    }
-
-    #map{
-        height: 100%;
-        width: 100%;
-        background-color: orange;
+    #map{ height: 100%; width: 100%; }
+    .content-wrapper{ max-width: 1200px; margin: auto; }
+    h1{
+      font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+      font-size: 20px;
+      color: #333;
+      margin: 0 0 20px 0;
+      padding: 0;
     }
     </style>
 
-    <div class="map-wrapper">
+    <!-- Region name -->
+    <div class="content-wrapper">
+
+      <!-- Map -->
       <div id="map" class="world-map"></div>
+
+      <!-- Informations -->
+      <h1 id="region-name"></h1>
     </div>
-    <div id="region-name"></div>
 
     <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
+
     <script type="text/javascript">
 
       // SVG height and width
