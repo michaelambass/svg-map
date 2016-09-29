@@ -53,13 +53,17 @@
         // change opacity on hover
         world[i].mouseover(function(e){
           this.node.style.opacity = 0.7;
-      		document.getElementById('region-name').innerHTML = this.data('region');
+          this.node.style.cursor = 'pointer';
         });
 
         // reset the opacity
         world[i].mouseout(function(e){
       		this.node.style.opacity = 1;
       	});
+
+        world[i].click(function(e){
+          document.getElementById('region-name').innerHTML = this.data('region');
+        });
 
       }
     </script>
