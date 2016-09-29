@@ -26,11 +26,16 @@
 
     <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
     <script type="text/javascript">
+
+      // SVG height and width
       var w = 1201;
       var h = 473;
+
+      // Map init and setting up a view box
       var map = Raphael('map', '100%', '100%');
       map.setViewBox(0, 0, w, h, true);
 
+      // world map part SVG storage in array
       var world = [];
 
       // map path 1
@@ -196,23 +201,6 @@
       israel.data({'id': 'israel', 'region': 'Israel'});
       world.push(israel);
 
-
-
-
-/*
-      // map part 1
-      var part1 = map.path('M82.75,186.785156 C47.90625,273.519531 -35.8671861,392.136719 17.5117187,444.773438 C70.8906236,497.410156 152.441399,542.628906 164.300781,581.179688 C176.160163,619.730469 380.773415,663.730469 380.773437,658.28125 C380.77346,652.832031 474.92579,523.355469 483.820312,512.71875 C492.714835,502.082031 582.417977,372.34375 541.644531,334.535156 C500.871085,296.726563 423.773446,240.386719 402.273437,229.265625 C380.773429,218.144531 117.59375,100.050781 82.75,186.785156 Z');
-      part1.attr({fill: '#D8D8D8', 'stroke-width': 0});
-      part1.data({'id': 'part1', 'region': 'region1'});
-      world.push(part1);
-
-      // map part 2
-      var part2 = map.path('M485.02442,14.9372328 C468.556059,55.9308969 428.961837,111.99348 454.190553,136.871413 C479.419268,161.749346 517.962984,183.121291 523.568138,201.341723 C529.173292,219.562155 625.880589,240.358076 625.880599,237.782587 C625.88061,235.207097 670.380256,174.011998 674.584115,168.984717 C678.787974,163.957436 721.18478,102.638639 701.91384,84.7689906 C682.642899,66.8993421 646.20389,40.2711843 636.042242,35.0149709 C625.880595,29.7587575 501.492781,-26.0564313 485.02442,14.9372328 Z');
-      part2.attr({fill: '#333333', 'stroke-width': 0});
-      part2.data({'id': 'part2', 'region': 'region2'});
-      world.push(part2);
-      */
-
       // each regions
       for ( var i = 0; i < world.length; i++ ) {
 
@@ -228,9 +216,13 @@
       	});
 
         world[i].click(function(e){
+          var regionName = ''; // Set the region name in HTML
+
           if(this.data('region')){
-            document.getElementById('region-name').innerHTML = this.data('region');
+            regionName = this.data('region');
           }
+
+          document.getElementById('region-name').innerHTML = regionName;
         });
 
       }
